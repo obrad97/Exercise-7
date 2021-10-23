@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <title>Video player</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="player">
+                <video class="video">
+                    <source src="videos/clip1.mp4" type="video/mp4" />
+                </video>
+                <div class="video-controlls">
+                    <input
+                        class="progress-bar"
+                        type="range"
+                        value="0"
+                        min="0"
+                    />
+                    <div class="controlls">
+                        <div class="left-controlls">
+                            <div class="play-pause">
+                                <img
+                                    class="play active"
+                                    src="images/iconmonstr-media-control-48-240.png"
+                                    alt="play"
+                                />
+                                <img
+                                    class="pause"
+                                    src="images/iconmonstr-media-control-49-240.png"
+                                    alt="pause"
+                                />
+                            </div>
+                            <div class="mute-unmute">
+                                <img
+                                    class="sound-on active"
+                                    src="images/iconmonstr-audio-7-240.png"
+                                    alt="sound on"
+                                />
+                                <img
+                                    class="mute"
+                                    src="images/iconmonstr-audio-9-240.png"
+                                    alt="mute"
+                                />
+                                <div class="volume-controll">
+                                    <input
+                                        class="volume"
+                                        type="range"
+                                        value="50"
+                                        min="0"
+                                        max="100"
+                                    />
+                                </div>
+                            </div>
+                            <div class="playtime">
+                                <p>
+                                    <span id="current-time">2:34</span> /
+                                    <span id="duration">3:00</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="right-controlls">
+                            <div></div>
+                            <img
+                                class="fullscreen"
+                                src="images/iconmonstr-fullscreen-7-240.png"
+                                alt="fullscreen"
+                            />
+                            <img
+                                class="smallscreen"
+                                src="images/iconmonstr-fullscreen-11-240.png"
+                                alt="exit fullscreen"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="assets/js/script.js"></script>
+    </body>
+</html>
