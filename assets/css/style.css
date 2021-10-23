@@ -22,6 +22,8 @@ body {
     width: 100%;
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
 }
 
 .player:hover .video-controlls {
@@ -208,10 +210,63 @@ body {
     align-items: center;
 }
 
+.right-controlls {
+    display: flex;
+    align-items: center;
+}
+
+.right-controlls .active {
+    display: block;
+}
+
+.playback-speed {
+    color: white;
+    margin-right: 20px;
+    cursor: pointer;
+    padding: 3px;
+}
+
+
+.playback-speed:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
 .fullscreen {
     width: 20px;
+    display: none;
 }
 
 .smallscreen {
     display: none;
+}
+
+.playback-speed-modal {
+    background: rgba(0, 0, 0, 0.7) ;
+    position: absolute;
+    right: 10px;
+    bottom: 60px;
+    width: 150px;
+    display: none;
+}
+
+.playback-speed-modal ul {
+    list-style: none;
+}
+
+.playback-speed-modal ul li {
+    padding: 10px 0 10px 30px;
+    color: white;
+}
+
+.playback-speed-modal ul li:hover {
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+
+.playback-speed-modal-active {
+    display: block;
+}
+
+.playback-speed-modal ul .active-speed {
+    background: rgba(255, 255, 255, 0.5);
 }

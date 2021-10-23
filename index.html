@@ -19,6 +19,25 @@
                 <video class="video">
                     <source src="videos/clip1.mp4" type="video/mp4" />
                 </video>
+                <div class="playback-speed-modal">
+                    <ul>
+                        <li class="speed-rate" data-value="0.5">
+                            <p>0.5x</p>
+                        </li>
+                        <li class="speed-rate" data-value="0.75">
+                            <p>0.75x</p>
+                        </li>
+                        <li class="speed-rate" data-value="1">
+                            <p>1.0x</p>
+                        </li>
+                        <li class="speed-rate" data-value="1.5">
+                            <p>1.5x</p>
+                        </li>
+                        <li class="speed-rate" data-value="2">
+                            <p>2.0x</p>
+                        </li>
+                    </ul>
+                </div>
                 <div class="video-controlls">
                     <input
                         class="progress-bar"
@@ -63,15 +82,15 @@
                             </div>
                             <div class="playtime">
                                 <p>
-                                    <span id="current-time">2:34</span> /
-                                    <span id="duration">3:00</span>
+                                    <span id="current-time"></span> /
+                                    <span id="duration"></span>
                                 </p>
                             </div>
                         </div>
                         <div class="right-controlls">
-                            <div></div>
+                            <p class="playback-speed"></p>
                             <img
-                                class="fullscreen"
+                                class="fullscreen active"
                                 src="images/iconmonstr-fullscreen-7-240.png"
                                 alt="fullscreen"
                             />
