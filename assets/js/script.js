@@ -63,6 +63,12 @@ const defaultVolumeSet = () => {
     video.volume = volumeBar.value / 100;
 }
 
+const defaultSpeedSet = () => {
+    video.playbackRate = 1;
+    playBackSpeed.innerText = "1.0x";
+    document.querySelector('.speed-rate[data-value="1"]').classList.add('active-speed');
+}
+
 const progressBarChange =()=> {
     let newTime = Number(progressBar.value);
     video.currentTime = newTime;
@@ -89,9 +95,6 @@ const timeUpdateHandler =()=> {
     let durationSeconds = Math.floor(video.duration);
     let durationMinutes =  durationSeconds / 60;
     videoDuration.innerText = (durationMinutes < 1) ?  `0:${durationSeconds}` : `${durationMinutes}:${durationSeconds}`;
-    video.playbackRate = 1;
-    playBackSpeed.innerText = "1.0x";
-    document.querySelector('.speed-rate[data-value="1"]').classList.add('active-speed');
 }
 
 
@@ -246,3 +249,5 @@ document.addEventListener('click', (e)=> {
     };
 })
 
+defaultVolumeSet();
+defaultSpeedSet();
