@@ -63,7 +63,7 @@ const defaultVolumeSet = () => {
 }
 
 const progressBarChange =()=> {
-    let newTime = progressBar.value;
+    let newTime = Number(progressBar.value);
     video.currentTime = newTime;
 }
 
@@ -88,6 +88,7 @@ const timeUpdateHandler =()=> {
     let durationMinutes =  durationSeconds / 60;
     videoDuration.innerText = (durationMinutes < 1) ?  `0:${durationSeconds}` : `${durationMinutes}:${durationSeconds}`;
 }
+
 
 const playPauseVid = ()=> {
     if (video.paused) {
@@ -193,6 +194,7 @@ muteOff.addEventListener('click', muteUnmute);
 playVid.addEventListener('click', playPauseVid);
 pauseVid.addEventListener('click', playPauseVid);
 progressBar.addEventListener('change',progressBarChange);
+progressBar.addEventListener('input',progressBarChange);
 progressBar.addEventListener('mousedown', (e)=> {video.pause()});
 progressBar.addEventListener('mouseup', (e)=> { video.play()});
 playBackSpeed.addEventListener('click', openClosePlayback);
