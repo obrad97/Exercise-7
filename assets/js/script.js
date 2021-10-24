@@ -19,6 +19,7 @@ var mouseIsDown = false;
 var fullScreenIsOn = false;
 var timer;
 
+ //This function does not work when deplpoyed to vercel so i added everything from here to timeUpdate function
 video.onloadedmetadata = function () {
     defaultVolumeSet();
     let seconds = Math.floor(video.duration);
@@ -88,6 +89,9 @@ const timeUpdateHandler =()=> {
     let durationSeconds = Math.floor(video.duration);
     let durationMinutes =  durationSeconds / 60;
     videoDuration.innerText = (durationMinutes < 1) ?  `0:${durationSeconds}` : `${durationMinutes}:${durationSeconds}`;
+    video.playbackRate = 1;
+    playBackSpeed.innerText = "1.0x";
+    document.querySelector('.speed-rate[data-value="1"]').classList.add('active-speed');
 }
 
 
