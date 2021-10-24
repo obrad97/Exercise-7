@@ -68,6 +68,7 @@ const progressBarChange =()=> {
 }
 
 const timeUpdateHandler =()=> {
+    progressBar.max = Math.floor(video.duration);
     progressBar.value = Math.floor(video.currentTime);
     let progress = (progressBar.value-progressBar.min)/(progressBar.max-progressBar.min)*100;
     progressBar.style.background = `linear-gradient(to right, red 0%, red ${progress}%, rgba(0, 0 , 0 , 0.3) ${progress}%, rgba(0, 0 , 0 , 0.3) 100%)`;
