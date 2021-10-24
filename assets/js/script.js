@@ -31,13 +31,25 @@ video.onloadedmetadata = function () {
     document.querySelector('.speed-rate[data-value="1"]').classList.add('active-speed');
 }
 
-video.addEventListener('mousemove',(e)=> {
+player.addEventListener('mousemove',(e)=> {
     videoControlls.style.bottom = '0px';
     clearTimeout(timer);
+    if(playBackModal.classList.contains('playback-speed-modal-active')){
+        return
+    }else {
     timer = setTimeout(function(){
         videoControlls.style.bottom = '-60px';
     }, 1500);
+    }
 })
+
+player.addEventListener('mouseout', (e)=>{
+    if (playBackModal.classList.contains('playback-speed-modal-active')){
+        return;
+    }else {
+        videoControlls.style.bottom = '-60px';
+    }
+});
 
 videoControlls.addEventListener('mouseover', (e)=>{
     clearTimeout(timer);
@@ -168,6 +180,7 @@ video.addEventListener('dblclick', (e)=> {
     }
 })
 
+
 video.addEventListener('timeupdate', timeUpdateHandler);
 video.addEventListener('click', playPauseVid);
 volumeBar.addEventListener('change', setVolume);
@@ -187,4 +200,39 @@ speedRates.forEach(speedRate => {
         playBackSpeedChange(speedRate)
     })
 });
+
+document.addEventListener('keydown',(e)=> {
+    switch (e.code) {
+        case "Space":
+            e.preventDefault();
+            playPauseVid();
+        break;
+        
+        case "ArrowRight":
+            if (video.currentTime == video.duration) {
+                return;
+            }else {
+                e.preventDefault();
+                let vidCurrentTime = video.currentTime;
+                video.currentTime = vidCurrentTime + 5;
+            }
+        break;
+        
+        case "ArrowLeft":
+            if (video.currentTime == 0){
+                return;
+            }else {
+                e.preventDefault();
+                let vidCurrentTime = video.currentTime;
+                video.currentTime = vidCurrentTime - 5;
+            }
+        break;
+    }
+})
+
+document.addEventListener('click', (e)=> {
+    if(!e.target.closest('.playback-speed-modal,.video-controlls')){
+        playBackModal.classList.remove('playback-speed-modal-active')
+    };
+})
 
