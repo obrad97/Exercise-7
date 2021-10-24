@@ -84,6 +84,9 @@ const timeUpdateHandler =()=> {
         playVid.classList.toggle('active');
         pauseVid.classList.toggle('active');
     }
+    let durationSeconds = Math.floor(video.duration);
+    let durationMinutes =  durationSeconds / 60;
+    videoDuration.innerText = (durationMinutes < 1) ?  `0:${durationSeconds}` : `${durationMinutes}:${durationSeconds}`;
 }
 
 const playPauseVid = ()=> {
